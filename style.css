@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #3e3c49;
+    color: white;
+    padding: 30px;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+blockquote {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.quote-wrapper {
+    margin: 30px 0;
+}
+
+.generate-btn {
+    cursor: pointer;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    height: 40px;
+    padding: 0 30px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.generate-btn:hover {
+    background: #202020;
+}
