@@ -1,4 +1,4 @@
-const quotes = [
+export default [
     {
         text: 'It does not matter how slowly you go as long as you do not stop.',
         author: 'Confucius',
@@ -241,38 +241,3 @@ const quotes = [
         year: -399,
     },
 ];
-
-const quoteText = document.getElementById('quoteText');
-const quoteAuthor = document.getElementById('quoteAuthor');
-const quoteYear = document.getElementById('quoteYear');
-const quoteGenereate = document.getElementById('generate');
-
-const getYearPrefics = (year) => (year <= 0 ? 'BC' : 'AD');
-
-function typeEffect(element, text, speed = 10) {
-    return new Promise((resolve) => {
-        new Typed(element, {
-            strings: [text],
-            typeSpeed: speed,
-            showCursor: false,
-            onComplete: () => resolve(),
-        });
-    });
-}
-
-async function getRandomQuote() {
-    const randomNumber = Math.floor(Math.random() * quotes.length);
-    const { text, author, year } = quotes[randomNumber];
-
-    quoteText.textContent = '';
-    quoteAuthor.textContent = '';
-    quoteYear.textContent = '';
-
-    await typeEffect(quoteText, `"${text}"`);
-    await typeEffect(quoteAuthor, `${author},`);
-    await typeEffect(quoteYear, year.toString() + ' ' + getYearPrefics(year));
-}
-
-getRandomQuote();
-
-quoteGenereate.addEventListener('click', getRandomQuote);
